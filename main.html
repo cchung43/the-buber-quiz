@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Buber Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .correct {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px solid green;
+            color: green;
+            font-weight: bold;
+        }
+        .incorrect {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px solid red;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h1>How Well Do You Know Buber?</h1>
+
+<form id="quizForm">
+    <div class="question">
+        <p>1. Let's start easy. Where was I born?</p>
+        <input type="radio" name="q1" value="colusa"> Colusa County<br>
+        <input type="radio" name="q1" value="orange"> Orange County<br>
+        <input type="radio" name="q1" value="sacramento"> Sacramento County<br>
+        <input type="radio" name="q1" value="marin"> Marin County<br>
+        <input type="radio" name="q1" value="merced"> Merced<br>
+    </div>
+
+    <div class="question">
+        <p>2. What is my personality type?</p>
+        <input type="radio" name="q2" value="ISTP"> ISTP<br>
+        <input type="radio" name="q2" value="INTJ"> INTJ<br>
+        <input type="radio" name="q2" value="INTP"> INTP<br>
+        <input type="radio" name="q2" value="ISTJ"> ISTJ<br>
+        <input type="radio" name="q2" value="ISFP"> ISFP<br>
+    </div>
+
+    <div class="question">
+        <p>3. How many doggo stuffies do I have? Note: Boris doesn't count</p>
+        <input type="radio" name="q3" value="3"> 3<br>
+        <input type="radio" name="q3" value="4"> 4<br>
+        <input type="radio" name="q3" value="5"> 5<br>
+        <input type="radio" name="q3" value="6"> 6<br>
+        <input type="radio" name="q3" value="7"> 7<br>
+    </div>
+
+    <div class="question">
+        <p>4. How does I normally spend my free time?</p>
+        <input type="radio" name="q4" value="workout"> Working out in the gym<br>
+        <input type="radio" name="q4" value="study"> Studying for the next midterm<br>
+        <input type="radio" name="q4" value="party"> Spending a night out at Plant<br>
+        <input type="radio" name="q4" value="buber"> Bubering at home with hanee<br>
+    </div>
+
+    <div class="question">
+        <p>5. Which country do I want to visit most at the moment?</p>
+        <input type="radio" name="q5" value="japan"> Japan<br>
+        <input type="radio" name="q5" value="germany"> Germany<br>
+        <input type="radio" name="q5" value="australia"> Australia<br>
+        <input type="radio" name="q5" value="palestine"> Palestine<br>
+        <input type="radio" name="q5" value="switzerland"> Switzerland<br>
+    </div>
+
+    <div class="question">
+        <p>6. Who is my favorite stuffy?</p>
+        <input type="radio" name="q6" value="boris"> Boris<br>
+        <input type="radio" name="q6" value="bumpy"> Bumpy<br>
+        <input type="radio" name="q6" value="ena"> Ena<br>
+        <input type="radio" name="q6" value="cooper"> Cooper<br>
+        <input type="radio" name="q6" value="bechi"> Bechi<br>
+    </div>
+
+    <button type="button" onclick="checkAnswers()">Submit</button>
+</form>
+
+<div id="correct" class="correct">Good job!! Your next clue is behind Eldom, aka daddy toh.</div>
+<div id="incorrect" class="incorrect">Some answers are incorrect. Try again!</div>
+
+<script>
+    function checkAnswers() {
+        var correctAnswers = {
+            q1: 'orange',
+            q2: 'INTJ',
+            q3: '4',
+            q4: 'buber',
+            q5: 'switzerland',
+            q6: 'ena',
+        };
+
+        var form = document.getElementById('quizForm');
+        var allCorrect = true;
+
+        for (var key in correctAnswers) {
+            var radios = form.elements[key];
+            var answerSelected = false;
+
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    answerSelected = true;
+                    if (radios[i].value !== correctAnswers[key]) {
+                        allCorrect = false;
+                    }
+                }
+            }
+
+            if (!answerSelected) {
+                allCorrect = false;
+            }
+        }
+
+        if (allCorrect) {
+            document.getElementById('incorrect').style.display = 'none';
+            document.getElementById('correct').style.display = 'block';
+        } else {
+            document.getElementById('incorrect').style.display = 'block';
+            document.getElementById('correct').style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>
