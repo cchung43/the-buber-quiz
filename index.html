@@ -33,19 +33,21 @@
 <body>
 
 <h1>How Well Do You Know Buber?</h1>
+<h2>Answer All Questions Correctly To Receive The Next Hint!</h2>
+<br />
 
 <form id="quizForm">
     <div class="question">
-        <p>1. Let's start easy. Where was I born?</p>
+        <p>1. In which county was buber born?</p>
         <input type="radio" name="q1" value="colusa"> Colusa County<br>
         <input type="radio" name="q1" value="orange"> Orange County<br>
         <input type="radio" name="q1" value="sacramento"> Sacramento County<br>
         <input type="radio" name="q1" value="marin"> Marin County<br>
-        <input type="radio" name="q1" value="merced"> Merced<br>
+        <input type="radio" name="q1" value="merced"> Merced County<br>
     </div>
 
     <div class="question">
-        <p>2. What is my personality type?</p>
+        <p>2. What is buber's personality type?</p>
         <input type="radio" name="q2" value="ISTP"> ISTP<br>
         <input type="radio" name="q2" value="INTJ"> INTJ<br>
         <input type="radio" name="q2" value="INTP"> INTP<br>
@@ -54,16 +56,16 @@
     </div>
 
     <div class="question">
-        <p>3. How many doggo stuffies do I have? Note: Boris doesn't count</p>
-        <input type="radio" name="q3" value="3"> 3<br>
-        <input type="radio" name="q3" value="4"> 4<br>
-        <input type="radio" name="q3" value="5"> 5<br>
-        <input type="radio" name="q3" value="6"> 6<br>
-        <input type="radio" name="q3" value="7"> 7<br>
+        <p>3. On which day did ena confess to buber?</p>
+        <input type="radio" name="q3" value="25"> 11/25<br>
+        <input type="radio" name="q3" value="26"> 11/26<br>
+        <input type="radio" name="q3" value="27"> 11/27<br>
+        <input type="radio" name="q3" value="28"> 11/28<br>
+        <input type="radio" name="q3" value="29"> 11/29<br>
     </div>
 
     <div class="question">
-        <p>4. How do I normally spend my free time?</p>
+        <p>4. How does buber normally spend her free time?</p>
         <input type="radio" name="q4" value="workout"> Working out in the gym<br>
         <input type="radio" name="q4" value="study"> Studying for the next midterm<br>
         <input type="radio" name="q4" value="party"> Spending a night out at Plant<br>
@@ -71,7 +73,7 @@
     </div>
 
     <div class="question">
-        <p>5. Which country do I want to visit the most?</p>
+        <p>5. Which country does buber want to visit the most?</p>
         <input type="radio" name="q5" value="japan"> Japan<br>
         <input type="radio" name="q5" value="germany"> Germany<br>
         <input type="radio" name="q5" value="australia"> Australia<br>
@@ -80,12 +82,48 @@
     </div>
 
     <div class="question">
-        <p>6. Who is my favorite stuffy?</p>
+        <p>6. Who is buber's favorite stuffy?</p>
         <input type="radio" name="q6" value="boris"> Boris<br>
         <input type="radio" name="q6" value="bumpy"> Bumpy<br>
         <input type="radio" name="q6" value="ena"> Ena<br>
         <input type="radio" name="q6" value="cooper"> Cooper<br>
         <input type="radio" name="q6" value="bechi"> Bechi<br>
+    </div>
+
+    <div class="question">
+        <p>7. Which movie has buber and ena NOT watched together?</p>
+        <input type="radio" name="q7" value="panther"> Black Panther<br>
+        <input type="radio" name="q7" value="guy"> Free Guy<br>
+        <input type="radio" name="q7" value="hearts"> Purple Hearts<br>
+        <input type="radio" name="q7" value="inside"> Inside Out<br>
+        <input type="radio" name="q7" value="panda"> Kungfu Panda<br>
+    </div>
+
+    <div class="question">
+        <p>8. Why did buber decide to go to church with ena?</p>
+        <input type="radio" name="q8" value="1"> Buber heard good things about God and wanted to see what God is like<br>
+        <input type="radio" name="q8" value="2"> Buber was interested in ena and wanted to learn more about him<br>
+        <input type="radio" name="q8" value="3"> Buber had a dream that she came to Christ and she wanted to fulfill her destiny<br>
+        <input type="radio" name="q8" value="4"> Buber likes church music and wants to vibe every Sunday morning<br>
+        <input type="radio" name="q8" value="5"> Buber enjoys meals after church where she gets to socialize with people<br>
+    </div>
+
+    <div class="question">
+        <p>9. On the morning after ena and buber started dating, what did ena first address buber as?</p>
+        <input type="radio" name="q9" value="1"> Hanee<br>
+        <input type="radio" name="q9" value="2"> Buber<br>
+        <input type="radio" name="q9" value="3"> My Love<br>
+        <input type="radio" name="q9" value="4"> Good Girl<br>
+        <input type="radio" name="q9" value="5"> Darling<br>
+    </div>
+
+    <div class="question">
+        <p>10. When will buber return to Baltimore?</p>
+        <input type="radio" name="q10" value="1"> 8/23 evening<br>
+        <input type="radio" name="q10" value="2"> 8/24 morning<br>
+        <input type="radio" name="q10" value="3"> 8/24 afternoon<br>
+        <input type="radio" name="q10" value="4"> 8/24 evening<br>
+        <input type="radio" name="q10" value="5"> 8/25 morning<br>
     </div>
 
     <button type="button" onclick="checkAnswers()">Submit</button>
@@ -99,10 +137,14 @@
         var correctAnswers = {
             q1: 'orange',
             q2: 'INTJ',
-            q3: '4',
+            q3: '27',
             q4: 'buber',
             q5: 'switzerland',
             q6: 'ena',
+            q7: 'inside',
+            q8: '2',
+            q9: '3',
+            q10: '2',
         };
 
         var form = document.getElementById('quizForm');
